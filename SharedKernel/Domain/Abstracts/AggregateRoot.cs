@@ -1,6 +1,7 @@
 ﻿using SharedKernel.Domain.Interfaces.Abstracts;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace SharedKernel.Domain.Abstracts
 {
@@ -25,7 +26,7 @@ namespace SharedKernel.Domain.Abstracts
             _Events.Clear();
         }
 
-        public abstract void Validate();
+        public abstract Task ValidateAsync();
     }
 
     public abstract class AggregateRoot<TKey> : Entity<TKey>, IAggregateRoot<TKey>
@@ -51,6 +52,6 @@ namespace SharedKernel.Domain.Abstracts
             _Events.Clear();
         }
 
-        public abstract void Validate();
+        public abstract Task ValidateAsync();
     }
 }

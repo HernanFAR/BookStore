@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SharedKernel.Domain.Interfaces.Abstracts
 {
@@ -10,7 +11,7 @@ namespace SharedKernel.Domain.Interfaces.Abstracts
 
         void ClearEvents();
 
-        void Validate();
+        Task Validate();
     }
 
     public interface IAggregateRoot<TKey> : IAggregateRoot, IEntity<TKey> { }
