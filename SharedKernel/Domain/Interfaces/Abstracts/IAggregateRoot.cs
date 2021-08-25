@@ -11,7 +11,7 @@ namespace SharedKernel.Domain.Interfaces.Abstracts
 
         void ClearEvents();
 
-        Task Validate();
+        Task ValidateAsync();
     }
 
     public interface IAggregateRoot<TKey> : IAggregateRoot, IEntity<TKey> { }
