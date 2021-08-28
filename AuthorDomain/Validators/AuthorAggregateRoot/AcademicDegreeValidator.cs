@@ -1,4 +1,4 @@
-﻿using AuthorDomain.Core;
+﻿using AuthorDomain.Core.AuthorAggregateRoot;
 using FluentValidation;
 using FluentValidation.Results;
 using Resources = AuthorDomain.Properties.Validators.AuthorAggregateRoot.AcademicDegreeValidator;

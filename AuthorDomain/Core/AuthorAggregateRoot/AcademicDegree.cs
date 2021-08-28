@@ -1,7 +1,7 @@
 ﻿using SharedKernel.Domain.Abstracts.Audited.Entities;
 using System;
 
-namespace AuthorDomain.Core
+namespace AuthorDomain.Core.AuthorAggregateRoot
 {
     public class AcademicDegree : CAuditedEntity<Guid>
     {

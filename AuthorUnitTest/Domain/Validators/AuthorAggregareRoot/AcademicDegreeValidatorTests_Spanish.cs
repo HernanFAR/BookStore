@@ -1,4 +1,4 @@
-﻿using AuthorDomain.Core;
+﻿using AuthorDomain.Core.AuthorAggregateRoot;
 using AuthorDomain.Validators.AuthorAggregateRoot;
 using FluentAssertions;
 using System.Threading.Tasks;
