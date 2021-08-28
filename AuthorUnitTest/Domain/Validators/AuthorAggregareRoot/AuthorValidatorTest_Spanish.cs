@@ -3,9 +3,6 @@ using AuthorDomain.Core.AuthorAggregateRoot;
 using AuthorDomain.Validators.AuthorAggregateRoot;
 using FluentAssertions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -24,7 +21,9 @@ namespace AuthorUnitTest.Domain.Validators.AuthorAggregareRoot
 
 
             // Act
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
             var validationResult = await validator.ValidateAsync(author);
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
 
 
             // Assert
@@ -123,7 +122,9 @@ namespace AuthorUnitTest.Domain.Validators.AuthorAggregareRoot
             var author = new Author(name, subname);
             AcademicDegree? degree = null;
 
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
             await author.AddDegree(degree);
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
 
             var validator = new AuthorValidator();
 

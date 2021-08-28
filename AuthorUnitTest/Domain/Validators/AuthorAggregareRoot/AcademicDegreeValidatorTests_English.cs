@@ -25,7 +25,9 @@ namespace AuthorUnitTest.Domain.Validators.AuthorAggregareRoot
             var validator = new AcademicDegreeValidator();
 
             // Act
+#pragma warning disable CS8604 // Posible argumento de referencia nulo
             var validationResult = await validator.ValidateAsync(academicDegree);
+#pragma warning restore CS8604 // Posible argumento de referencia nulo
 
 
             // Assert
