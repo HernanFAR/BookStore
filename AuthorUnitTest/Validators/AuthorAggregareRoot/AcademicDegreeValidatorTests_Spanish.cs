@@ -27,8 +27,8 @@ namespace AuthorUnitTest.Validators.AuthorAggregareRoot
 
 
             // Assert
-            validationResult.Errors.Should().HaveCount(expCount).And
-                .Contain(e => e.ErrorMessage == "El grado academico es invalido");
+            validationResult.Errors.Should().HaveCount(expCount)
+                .And.Contain(e => e.ErrorMessage == "El grado academico es invalido");
         	
         	
         }
