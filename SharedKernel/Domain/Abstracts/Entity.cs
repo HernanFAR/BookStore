@@ -88,7 +88,9 @@ namespace SharedKernel.Domain.Abstracts
     {
         public TKey Id { get; private set; }
 
+#pragma warning disable CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
         protected Entity() { }
+#pragma warning restore CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
 
         protected Entity(TKey id)
         {
@@ -97,12 +99,18 @@ namespace SharedKernel.Domain.Abstracts
 
         public override string StringifyKeys()
         {
+#pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
+#pragma warning disable CS8603 // Posible tipo de valor devuelto de referencia nulo
             return Id.ToString();
+#pragma warning restore CS8603 // Posible tipo de valor devuelto de referencia nulo
+#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
         }
 
         public override object[] GetKeys()
         {
+#pragma warning disable CS8601 // Posible asignación de referencia nula
             return new object[] { Id };
+#pragma warning restore CS8601 // Posible asignación de referencia nula
         }
 
         public override string ToString()
