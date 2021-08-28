@@ -6,7 +6,7 @@ using System;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace AuthorUnitTest
+namespace AuthorUnitTest.Domain.Core
 {
     public class AuthorTests
     {
@@ -31,8 +31,8 @@ namespace AuthorUnitTest
             author.Name.Should().Be(expName);
             author.Subname.Should().Be(expSubname);
             author.BirthDate.Should().Be(expBirthDate);
-        	
-        	
+
+
         }
 
         [Fact]

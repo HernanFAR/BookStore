@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace AuthorUnitTest.Validators.AuthorAggregareRoot
+namespace AuthorUnitTest.Domain.Validators.AuthorAggregareRoot
 {
     public class AuthorValidatorTest_Spanish
     {
@@ -42,7 +42,7 @@ namespace AuthorUnitTest.Validators.AuthorAggregareRoot
             // Arrange
             var expCount = 1;
             var subname = "Test";
-            
+
             var author = new Author(name, subname);
 
             var validator = new AuthorValidator();
@@ -55,8 +55,8 @@ namespace AuthorUnitTest.Validators.AuthorAggregareRoot
             // Assert
             validationResult.Errors.Should().HaveCount(expCount).And
                 .Contain(e => e.ErrorMessage == "El nombre del autor no es valido");
-        	
-        	
+
+
         }
 
         [Theory]
@@ -67,7 +67,7 @@ namespace AuthorUnitTest.Validators.AuthorAggregareRoot
             // Arrange
             var expCount = 1;
             var name = "Test";
-            
+
             var author = new Author(name, subname);
 
             var validator = new AuthorValidator();
@@ -80,8 +80,8 @@ namespace AuthorUnitTest.Validators.AuthorAggregareRoot
             // Assert
             validationResult.Errors.Should().HaveCount(expCount).And
                 .Contain(e => e.ErrorMessage == "El apellido del autor no es valido");
-        	
-        	
+
+
         }
 
         [Fact]
@@ -93,7 +93,7 @@ namespace AuthorUnitTest.Validators.AuthorAggregareRoot
             var subname = "Test";
             var academicDegreeName = string.Empty;
             var academicDegreeUniversity = "test";
-            
+
             var author = new Author(name, subname);
             var degree = new AcademicDegree(academicDegreeName, academicDegreeUniversity);
 
@@ -108,8 +108,8 @@ namespace AuthorUnitTest.Validators.AuthorAggregareRoot
 
             // Assert
             validationResult.Errors.Should().HaveCountGreaterThan(expCount);
-        	
-        	
+
+
         }
 
         [Fact]
@@ -119,7 +119,7 @@ namespace AuthorUnitTest.Validators.AuthorAggregareRoot
             var expCount = 1;
             var name = "Test";
             var subname = "Test";
-            
+
             var author = new Author(name, subname);
             AcademicDegree? degree = null;
 

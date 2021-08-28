@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace AuthorUnitTest.Validators.AuthorAggregareRoot
+namespace AuthorUnitTest.Domain.Validators.AuthorAggregareRoot
 {
     public class AuthorValidatorTest_English
     {

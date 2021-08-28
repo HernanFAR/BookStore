@@ -1,19 +1,15 @@
 ﻿using AuthorDomain.Core;
 using AuthorDomain.Validators.AuthorAggregateRoot;
 using FluentAssertions;
-using System.Globalization;
-using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace AuthorUnitTest.Validators.AuthorAggregareRoot
+[assembly: CollectionBehavior(DisableTestParallelization = true)]
+
+namespace AuthorUnitTest.Domain.Validators.AuthorAggregareRoot
 {
-    public class AcademicDegreeValidatorTests_English
+    public class AcademicDegreeValidatorTests_Spanish
     {
-        public AcademicDegreeValidatorTests_English()
-        {
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en");
-        }
 
         [Fact]
         public async Task Validate_Failure_Should_HaveOneErrorCount_Detail_NullDegree()
@@ -29,11 +25,12 @@ namespace AuthorUnitTest.Validators.AuthorAggregareRoot
 
 
             // Assert
-            validationResult.Errors.Should().HaveCount(expCount).And
-                .Contain(e => e.ErrorMessage == "The academic agrade is not valid");
+            validationResult.Errors.Should().HaveCount(expCount)
+                .And.Contain(e => e.ErrorMessage == "El grado academico es invalido");
 
 
         }
+
 
         [Theory]
         [InlineData(null)]
@@ -54,9 +51,9 @@ namespace AuthorUnitTest.Validators.AuthorAggregareRoot
 
             // Assert
             validationResult.Errors.Should().HaveCount(expCount).And
-                .Contain(e => e.ErrorMessage == "The sended name of some academic degree is not valid");
-        	
-        	
+                .Contain(e => e.ErrorMessage == "El nombre ingresado en algun grado academico es invalido");
+
+
         }
 
         [Theory]
@@ -78,9 +75,33 @@ namespace AuthorUnitTest.Validators.AuthorAggregareRoot
 
             // Assert
             validationResult.Errors.Should().HaveCount(expCount).And
-                .Contain(e => e.ErrorMessage == "The sended name of some university is not valid");
-        	
-        	
+                .Contain(e => e.ErrorMessage == "El nombre ingresado en algun universidad es invalido");
+
+
+        }
+
+        [Fact]
+        public async Task Validate_Success_Should_ValidationResultBeValid()
+        {
+            // Arrange
+            var name = "Nombre";
+            var university = "Nombre";
+            var expCount = 0;
+
+            var academicDegree = new AcademicDegree(name, university);
+
+            var validator = new AcademicDegreeValidator();
+
+
+            // Act
+            var validationResult = await validator.ValidateAsync(academicDegree);
+
+
+            // Assert
+            validationResult.IsValid.Should().BeTrue();
+            validationResult.Errors.Should().HaveCount(expCount);
+
+
         }
     }
 }
