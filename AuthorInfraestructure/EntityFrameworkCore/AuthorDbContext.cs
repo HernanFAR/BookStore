@@ -21,7 +21,7 @@ namespace AuthorInfraestructure.EntityFrameworkCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            new AuthorEntityTypeConfiguration().Configure(modelBuilder.Entity<Author>());
         }
     }
 }
