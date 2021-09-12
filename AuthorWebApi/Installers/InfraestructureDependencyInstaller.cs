@@ -1,11 +1,10 @@
 ﻿using AuthorInfraestructure.EntityFrameworkCore;
+using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SharedKernel.Infraestructure.EntityFramework.Interceptors;
 using SharedKernel.WebAPI.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace AuthorWebApi.Installers
 {
@@ -16,7 +15,7 @@ namespace AuthorWebApi.Installers
             serviceCollection.AddDbContextPool<ApplicationDbContext, ApplicationDbContext>(
                 (factory, options) =>
                 {
-                    options.UseSqlServer(configuration.GetConnectionString("DbConnectionString"))
+                    options.UseSqlServer(configuration.GetConnectionString("ApplicationDbContext"))
                         .AddInterceptors(new EventInvokerInterceptor(factory.GetRequiredService<IMediator>()));
                 });
         }
