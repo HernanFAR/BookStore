@@ -14,7 +14,6 @@ namespace AuthorInfraestructure.EntityFrameworkCore.Relations
             builder.ConfigureBaseClass();
 
             builder.Property(e => e.CreatedDate).IsRequired();
-            builder.Property(e => e.CreatedBy).IsRequired();
 
             builder.OwnsMany(e => e.Degrees, degree =>
             {
