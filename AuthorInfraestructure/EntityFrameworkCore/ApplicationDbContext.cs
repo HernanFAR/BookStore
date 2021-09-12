@@ -9,7 +9,7 @@ namespace AuthorInfraestructure.EntityFrameworkCore
         public DbSet<Author> Authors { get => Set<Author>(); }
 
 
-        public ApplicationDbContext(DbContextOptions options) :
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) :
             base(options)
         {
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
