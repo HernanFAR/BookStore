@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorDomain", "AuthorDomai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorUnitTest", "AuthorUnitTest\AuthorUnitTest.csproj", "{E19E913B-F386-4E7B-834B-90AA19D55B07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorInfraestructure", "AuthorInfraestructure\AuthorInfraestructure.csproj", "{95D99DB0-8485-4F37-B77B-CE0F29FFC455}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorInfraestructure", "AuthorInfraestructure\AuthorInfraestructure.csproj", "{95D99DB0-8485-4F37-B77B-CE0F29FFC455}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorWebApi", "AuthorWebApi\AuthorWebApi.csproj", "{A48EAA25-FE99-4BF1-A5C5-FEF0F23051D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{95D99DB0-8485-4F37-B77B-CE0F29FFC455}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95D99DB0-8485-4F37-B77B-CE0F29FFC455}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95D99DB0-8485-4F37-B77B-CE0F29FFC455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A48EAA25-FE99-4BF1-A5C5-FEF0F23051D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A48EAA25-FE99-4BF1-A5C5-FEF0F23051D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A48EAA25-FE99-4BF1-A5C5-FEF0F23051D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A48EAA25-FE99-4BF1-A5C5-FEF0F23051D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{927BA873-33BB-4AB5-A52C-6D7573D8092B} = {748EA3A7-7106-49C3-A8ED-A712FA3C19A9}
 		{E19E913B-F386-4E7B-834B-90AA19D55B07} = {A55B05FA-C5EC-48F1-A7BC-666BA34AF8A0}
 		{95D99DB0-8485-4F37-B77B-CE0F29FFC455} = {748EA3A7-7106-49C3-A8ED-A712FA3C19A9}
+		{A48EAA25-FE99-4BF1-A5C5-FEF0F23051D8} = {748EA3A7-7106-49C3-A8ED-A712FA3C19A9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8C760435-6EDD-44BE-BCB5-E9036D83A53D}
