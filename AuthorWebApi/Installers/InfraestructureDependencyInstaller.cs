@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SharedKernel.Infraestructure.EntityFramework.Interceptors;
 using SharedKernel.WebAPI.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using AuthorDomain.Constants;
 
 namespace AuthorWebApi.Installers
 {
@@ -17,11 +18,9 @@ namespace AuthorWebApi.Installers
                 {
                     options.UseSqlServer(
                             configuration.GetConnectionString("Database"),
-                            options =>
-                            {
-                                options.MigrationsAssembly(typeof(ApplicationDbContext).Namespace);
-                            }
+                            options => options.MigrationsHistoryTable("__EFMigrationsHistory", DatabaseConstants.Schema)
                         )
+                        .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
                         .AddInterceptors(new EventInvokerInterceptor(factory.GetRequiredService<IMediator>()));
                 });
         }

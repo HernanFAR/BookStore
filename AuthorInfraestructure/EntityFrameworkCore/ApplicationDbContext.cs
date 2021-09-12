@@ -10,10 +10,7 @@ namespace AuthorInfraestructure.EntityFrameworkCore
 
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) :
-            base(options)
-        {
-            ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
-        }
+            base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
