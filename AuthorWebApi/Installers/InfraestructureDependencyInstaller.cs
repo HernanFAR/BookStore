@@ -15,7 +15,13 @@ namespace AuthorWebApi.Installers
             serviceCollection.AddDbContextPool<ApplicationDbContext, ApplicationDbContext>(
                 (factory, options) =>
                 {
-                    options.UseSqlServer(configuration.GetConnectionString("ApplicationDbContext"))
+                    options.UseSqlServer(
+                            configuration.GetConnectionString("Database"),
+                            options =>
+                            {
+                                options.MigrationsAssembly(typeof(ApplicationDbContext).Namespace);
+                            }
+                        )
                         .AddInterceptors(new EventInvokerInterceptor(factory.GetRequiredService<IMediator>()));
                 });
         }
